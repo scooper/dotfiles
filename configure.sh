@@ -30,4 +30,4 @@ if [ -d "$config_path/nvim" ] ; then
 fi
 
 mkdir "$config_path/nvim"
-mv "$nvchad_path"/* "$config_path/nvim/"
+cp "$nvchad_path"/* "$config_path/nvim/"
