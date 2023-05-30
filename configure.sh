@@ -6,15 +6,18 @@ overwrite_check () {
  - Would you like to overwrite it? (y/n): " yn
         case ${yn:0:1} in
             y|Y )
-                return 1 # overwrite
+                echo 1 # overwrite
+                return
             ;;
             * )
-                return 0 # do nothing
+                echo 0 # do nothing
+                return
             ;;
         esac
     fi
 
-    return 2 # not detected
+    echo 2 # not detected
+    return
 }
 
 config_path="/home/$USER/.config"
@@ -29,8 +32,8 @@ echo "Setting up nvim..."
 
 overwrite_nvim=$(overwrite_check $config_path/nvim/)
 
-if [ $overwrite_nvim=1 ] || [ $overwrite_nvim=2 ] ; then
-    if [ $overwrite_nvim=1 ] ; then
+if [ $overwrite_nvim -eq 1 ] || [ $overwrite_nvim -eq 2 ]  ; then
+    if [ $overwrite_nvim -eq 1 ] ; then
         echo " - Overwriting..."
         rm -rf "$config_path/nvim"
     fi
@@ -44,8 +47,8 @@ echo "Setting up tmux..."
 
 overwrite_tmux=$(overwrite_check $config_path/tmux/)
 
-if [ $overwrite_tmux=1 ] || [ $overwrite_tmux=2 ]  ; then
-    if [ $overwrite_tmux=1 ] ; then
+if [ $overwrite_tmux -eq 1 ] || [ $overwrite_tmux -eq 2 ]  ; then
+    if [ $overwrite_tmux -eq 1 ] ; then
         echo " - Overwriting..."
         rm -rf "$config_path/tmux"
     fi
