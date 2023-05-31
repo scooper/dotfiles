@@ -4,6 +4,12 @@
 - bash
 - tmux tpm installed
 - catppuccin theme for `gnome-terminal`
+- language servers
+  - pylsp
+  - clangd
+  - bashls
+  - html
+  - cssls
 
 ## setup
 - run `configure.sh`
