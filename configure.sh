@@ -39,7 +39,8 @@ if [ $overwrite_nvim -eq 1 ] || [ $overwrite_nvim -eq 2 ]  ; then
     fi
 
     rsync -a --exclude=".*" "$nvchad_path/" "$config_path/nvim/"
-    rsync -a "nvim/" "$config_path/nvim/lua/custom/"
+    rsync -a --include="*.lua" "nvim/" "$config_path/nvim/lua/"
+    rsync "lazy-lock.json" "$config_path/nvim/"
 fi
 
 
