@@ -1,6 +1,3 @@
 [submodule "external/NvChad"]
 	path = external/NvChad
 	url = https://github.com/NvChad/NvChad.git
-[submodule "external/alacritty"]
-	path = external/alacritty
-	url = git@github.com:catppuccin/alacritty.git

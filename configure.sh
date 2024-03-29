@@ -22,15 +22,9 @@ overwrite_check () {
 
 config_path="/home/$USER/.config"
 nvchad_path="external/NvChad"
-alacritty_catppuccin_path="external/alacritty"
 
 if [ ! -f "$nvchad_path/init.lua" ] ; then
     echo "NvChad not found, have you updated submodules?"
-    exit
-fi
-
-if [ ! -f "$alacritty_catppuccin_path/catppuccin-mocha.yml"] ; then
-    echo "Alacritty catppuccin theme not found, have you updated submodules?"
     exit
 fi
 
@@ -60,7 +54,7 @@ if [ $overwrite_tmux -eq 1 ] || [ $overwrite_tmux -eq 2 ]  ; then
         rm -rf "$config_path/tmux"
     fi
 
-    rsync -a "tmux/" "$config_path/tmux"
+    cp "tmux/tmux.conf" "$config_path/tmux"
 fi
 
 echo "Setting up alacritty..."
@@ -74,7 +68,5 @@ if [ $overwrite_alacritty -eq 1 ] || [ $overwrite_alacritty -eq 2 ] ; then
     fi
     
     mkdir "$config_path/alacritty"
-    mkdir "$config_path/alacritty/catppuccin"
-    rsync -a "alacritty/" "$config_path/alacritty"
-    rsync -a --exclude=".*" "$alacritty_catppuccin_path/" "$config_path/alacritty/catppuccin"
+    cp "alacritty/alacritty.toml" "$config_path/alacritty"
 fi
