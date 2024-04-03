@@ -21,15 +21,9 @@ overwrite_check () {
 }
 
 config_path="/home/$USER/.config"
-nvchad_path="external/NvChad"
 
-if [ ! -f "$nvchad_path/init.lua" ] ; then
-    echo "NvChad not found, have you updated submodules?"
-    exit
-fi
 
 echo "Setting up nvim..."
-
 overwrite_nvim=$(overwrite_check $config_path/nvim/)
 
 if [ $overwrite_nvim -eq 1 ] || [ $overwrite_nvim -eq 2 ]  ; then
@@ -38,14 +32,11 @@ if [ $overwrite_nvim -eq 1 ] || [ $overwrite_nvim -eq 2 ]  ; then
         rm -rf "$config_path/nvim"
     fi
 
-    rsync -a --exclude=".*" "$nvchad_path/" "$config_path/nvim/"
-    rsync -a --include="*.lua" "nvim/" "$config_path/nvim/lua/"
-    rsync "nvim/lazy-lock.json" "$config_path/nvim/"
+    cp -r "nvim/" "$config_path/"
 fi
 
 
 echo "Setting up tmux..."
-
 overwrite_tmux=$(overwrite_check $config_path/tmux/)
 
 if [ $overwrite_tmux -eq 1 ] || [ $overwrite_tmux -eq 2 ]  ; then
@@ -54,11 +45,11 @@ if [ $overwrite_tmux -eq 1 ] || [ $overwrite_tmux -eq 2 ]  ; then
         rm -rf "$config_path/tmux"
     fi
 
-    cp "tmux/tmux.conf" "$config_path/tmux"
+    cp -r "tmux/" "$config_path/"
 fi
 
-echo "Setting up alacritty..."
 
+echo "Setting up alacritty..."
 overwrite_alacritty=$(overwrite_check $config_path/alacritty/)
 
 if [ $overwrite_alacritty -eq 1 ] || [ $overwrite_alacritty -eq 2 ] ; then
@@ -67,6 +58,5 @@ if [ $overwrite_alacritty -eq 1 ] || [ $overwrite_alacritty -eq 2 ] ; then
         rm -rf "$config_path/alacritty"
     fi
     
-    mkdir "$config_path/alacritty"
-    cp "alacritty/alacritty.toml" "$config_path/alacritty"
+    cp -r "alacritty/" "$config_path/"
 fi
