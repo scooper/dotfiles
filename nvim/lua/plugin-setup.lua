@@ -28,6 +28,7 @@ return require('packer').startup(function(use)
     }
     use 'nvim-treesitter/nvim-treesitter'
     use 'alexghergh/nvim-tmux-navigation'
+    use 'nmac427/guess-indent.nvim'
 
     if packer_bootstrap then
         require('packer').sync()

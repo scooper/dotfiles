@@ -37,6 +37,21 @@ fi
 
 
 echo "Setting up tmux..."
+echo " - checking tpm"
+
+git --version 2>&1 > /dev/null
+GIT_AVAILABLE=$?
+if [ ! -d "~/.tmux/plugins/tpm/" ] ; then
+    echo " - installing tpm"
+    if [ $GIT_AVAILABLE -eq 0 ] ; then
+        git clone https://github.com/tmux-plugins/tpm "~/.tmux/plugins/tpm"
+    else
+        echo " - git not installed, skipping"
+    fi
+else
+    echo " - tpm already installed"
+fi
+
 overwrite_tmux=$(overwrite_check $config_path/tmux/)
 
 if [ $overwrite_tmux -eq 1 ] || [ $overwrite_tmux -eq 2 ]  ; then
