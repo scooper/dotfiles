@@ -1,5 +1,10 @@
 -- general
 vim.keymap.set('n', '<c-s>', ':w<CR>')
+vim.keymap.set('n', '<Tab>', ':bnext<CR>')
+vim.keymap.set('n', '<S-Tab>', ':bprev<CR>')
+
+
+-- tmux/window navigation
 vim.keymap.set('n', '<c-h>', ':NvimTmuxNavigateLeft<CR>')
 vim.keymap.set('n', '<c-j>', ':NvimTmuxNavigateDown<CR>')
 vim.keymap.set('n', '<c-k>', ':NvimTmuxNavigateUp<CR>')

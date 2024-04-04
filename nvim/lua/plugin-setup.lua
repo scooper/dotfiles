@@ -28,7 +28,16 @@ return require('packer').startup(function(use)
     }
     use 'nvim-treesitter/nvim-treesitter'
     use 'alexghergh/nvim-tmux-navigation'
+    use { 
+        'altermo/ultimate-autopair.nvim',
+        event = {'InsertEnter','CmdlineEnter'},
+        branch = 'v0.6',
+        config=function ()
+            require('ultimate-autopair').setup{}
+        end,
+    }
     use 'nmac427/guess-indent.nvim'
+    use 'lukas-reineke/indent-blankline.nvim'
 
     if packer_bootstrap then
         require('packer').sync()

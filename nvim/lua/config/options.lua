@@ -14,7 +14,7 @@ vim.o.list = true
 vim.opt.listchars:append({space = '.', tab = '>~', eol = '¬', trail='+'})
 
 -- yank to system clipboard
-vim.opt.clipboard:append('unnamed', 'unnamedplus')
+vim.opt.clipboard:append({'unnamed', 'unnamedplus'})
 
 -- show matching parenthesis
 vim.o.matchparen = true
