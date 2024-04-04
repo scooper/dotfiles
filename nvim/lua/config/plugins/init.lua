@@ -1,5 +1,7 @@
 require('config.plugins.nvim-tree')
+require('config.plugins.lsp')
 require('config.plugins.lualine')
 require('config.plugins.nordtheme')
 require('config.plugins.telescope')
 require('config.plugins.treesitter')
+require('config.plugins.tmux-navigation')

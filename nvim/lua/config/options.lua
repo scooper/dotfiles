@@ -7,9 +7,9 @@ vim.o.tabstop = 4
 vim.o.expandtab = true
 vim.o.softtabstop = 4
 
-vim.o.matchparen = true
-
 vim.o.list = true
-vim.opt.listchars = {space = '.', tab = '>~', eol = '¬', trail='+'}
+vim.opt.listchars:append({space = '.', tab = '>~', eol = '¬', trail='+'})
+
+vim.o.matchparen = true
 
 vim.o.guitermcolors = true
