@@ -41,10 +41,10 @@ echo " - checking tpm"
 
 git --version 2>&1 > /dev/null
 GIT_AVAILABLE=$?
-if [ ! -d "~/.tmux/plugins/tpm/" ] ; then
+if [ ! -d "/home/$USER/.tmux/plugins/tpm" ] ; then
     echo " - installing tpm"
     if [ $GIT_AVAILABLE -eq 0 ] ; then
-        git clone https://github.com/tmux-plugins/tpm "~/.tmux/plugins/tpm"
+        git clone https://github.com/tmux-plugins/tpm "/home/$USER/.tmux/plugins/tpm"
     else
         echo " - git not installed, skipping"
     fi
