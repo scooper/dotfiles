@@ -2,6 +2,7 @@
 vim.keymap.set('n', '<c-s>', ':w<CR>')
 vim.keymap.set('n', '<Tab>', ':bnext<CR>')
 vim.keymap.set('n', '<S-Tab>', ':bprev<CR>')
+vim.keymap.set('n', '<leader>i', ':lua vim.diagnostic.open_float()<CR>')
 
 -- tmux/window navigation
 vim.keymap.set('n', '<A-Left>', ':NvimTmuxNavigateLeft<CR>')
