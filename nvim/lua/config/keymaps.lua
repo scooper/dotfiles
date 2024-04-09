@@ -3,12 +3,11 @@ vim.keymap.set('n', '<c-s>', ':w<CR>')
 vim.keymap.set('n', '<Tab>', ':bnext<CR>')
 vim.keymap.set('n', '<S-Tab>', ':bprev<CR>')
 
-
 -- tmux/window navigation
-vim.keymap.set('n', '<c-h>', ':NvimTmuxNavigateLeft<CR>')
-vim.keymap.set('n', '<c-j>', ':NvimTmuxNavigateDown<CR>')
-vim.keymap.set('n', '<c-k>', ':NvimTmuxNavigateUp<CR>')
-vim.keymap.set('n', '<c-l>', ':NvimTmuxNavigateRight<CR>')
+vim.keymap.set('n', '<A-Left>', ':NvimTmuxNavigateLeft<CR>')
+vim.keymap.set('n', '<A-Down>', ':NvimTmuxNavigateDown<CR>')
+vim.keymap.set('n', '<A-Up>', ':NvimTmuxNavigateUp<CR>')
+vim.keymap.set('n', '<A-Right>', ':NvimTmuxNavigateRight<CR>')
 
 -- nvim-tree
 vim.keymap.set('n', '<leader>to', ':NvimTreeFindFileToggle<CR>')
@@ -33,7 +32,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
   callback = function(ev)
     -- Enable completion triggered by <c-x><c-o>
-    vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+    -- vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
     -- Buffer local mappings.
     -- See `:help vim.lsp.*` for documentation on any of the below functions
