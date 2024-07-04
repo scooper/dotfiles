@@ -72,6 +72,18 @@ if [ $overwrite_alacritty -eq 1 ] || [ $overwrite_alacritty -eq 2 ] ; then
         echo " - Overwriting..."
         rm -rf "$config_path/alacritty"
     fi
-    
+
     cp -r "alacritty/" "$config_path/"
+fi
+
+echo "Setting up kitty"
+overwrite_kitty=$(overwrite_check $config_path/kitty/)
+
+if [ $overwrite_alacritty -eq 1 ] || [ $overwrite_alacritty -eq 2 ] ; then
+    if [ $overwrite_alacritty -eq 1 ] ; then
+        echo " - Overwriting..."
+        rm -rf "$config_path/kitty"
+    fi
+
+    cp -r "kitty/" "$config_path/"
 fi
