@@ -4,6 +4,9 @@ vim.keymap.set('n', '<Tab>', ':bnext<CR>')
 vim.keymap.set('n', '<S-Tab>', ':bprev<CR>')
 vim.keymap.set('n', '<leader>i', ':lua vim.diagnostic.open_float()<CR>')
 
+-- buffer deletion
+vim.keymap.set('n', '<leader>bd', ':Bdelete<CR>')
+
 -- tmux/window navigation
 vim.keymap.set('n', '<A-Left>', ':NvimTmuxNavigateLeft<CR>')
 vim.keymap.set('n', '<A-Down>', ':NvimTmuxNavigateDown<CR>')

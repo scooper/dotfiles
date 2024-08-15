@@ -35,3 +35,6 @@ red = "#ee5396"
 cyan = "#3ddbd9"
 white = "#ffffff"
 
+[colors.cursor]
+text = '0x000000'
+cursor = '0xffffff'

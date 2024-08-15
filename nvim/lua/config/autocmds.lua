@@ -1,4 +1,3 @@
--- update packer on plugin-setup.lua save
 local group = vim.api.nvim_create_augroup("packer_user_config", { clear = true })
 vim.api.nvim_create_autocmd("BufWritePost", {
     pattern = "plugin-setup.lua",
@@ -6,7 +5,7 @@ vim.api.nvim_create_autocmd("BufWritePost", {
     group = group,
 })
 
--- format on save based on lsp
+
 vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("lsp", { clear = true }),
   callback = function(args)

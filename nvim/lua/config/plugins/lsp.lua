@@ -23,6 +23,7 @@ local servers = {
       }
     }
   }},
+  {"ols", "ols", {}},
 }
 
 for _, conf in ipairs(servers) do

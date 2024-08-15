@@ -1,5 +1,5 @@
 vim.o.number = true
-vim.o.guitermcolors = true
+vim.o.termguicolors = true
 
 -- tabs as spaces, etc
 vim.o.signcolumn = "auto"
@@ -11,10 +11,10 @@ vim.o.softtabstop = 4
 
 -- whitespace characters
 vim.o.list = true
-vim.opt.listchars:append({space = '.', tab = '>~', eol = '¬', trail='+'})
+vim.opt.listchars:append({space = '•', tab = '>~', eol = '¬', trail='+'})
 
 -- yank to system clipboard
 vim.opt.clipboard:append({'unnamed', 'unnamedplus'})
 
 -- show matching parenthesis
-vim.o.matchparen = true
+-- vim.o.matchparen = true
