@@ -1,17 +1,8 @@
 # dotfiles
 
-## requirements
-- language servers
-  - pylsp
-  - clangd
-
 ## setup
-- install Jetbrains Mono Nerdfont
-- run `install.sh`
-- start tmux
+- copy desired configurations to relevant local directories
+- tmux
   - install plugins with `Ctrl+Space+I`
-- start nvim
+- nvim
   - run `:PackerSync` if not done automatically
-
-### todo
-- download nerdfont automatically and move to local font dir
