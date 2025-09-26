@@ -21,13 +21,14 @@ return require('packer').startup(function(use)
         requires = { {'ms-jpq/coq.artifacts', branch = 'artifacts'} }
     }
     use 'nvim-lualine/lualine.nvim'
+    use 'feline-nvim/feline.nvim'
     use 'nyoom-engineering/oxocarbon.nvim'
+    use "EdenEast/nightfox.nvim"
     use { 
-	    'nvim-telescope/telescope.nvim', tag = '0.1.6',
-    	requires = { {'nvim-lua/plenary.nvim'} }
+        'nvim-telescope/telescope.nvim', tag = '0.1.6',
+        requires = { {'nvim-lua/plenary.nvim'} }
     }
     use 'nvim-treesitter/nvim-treesitter'
-    use 'alexghergh/nvim-tmux-navigation'
     use 'nmac427/guess-indent.nvim'
     use 'tpope/vim-surround'
     use 'tpope/vim-commentary'
@@ -37,6 +38,7 @@ return require('packer').startup(function(use)
     use 'tpope/vim-sensible'
     use 'windwp/nvim-autopairs'
     use 'famiu/bufdelete.nvim'
+    use 'folke/persistence.nvim'
 
     if packer_bootstrap then
         require('packer').sync()
